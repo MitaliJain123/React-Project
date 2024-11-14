@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.6.7</version> <!-- Make sure this version is compatible with your dependencies -->
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<groupId>com.codewitharjun</groupId>
+	<artifactId>fullstack-backend</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>fullstack-backend</name>
+	<description>Backend application</description>
+
+	<properties>
+		<java.version>17</java.version> <!-- Ensure compatibility with Java 17 -->
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- Spring Boot Maven Plugin Configuration -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.6.7</version> <!-- Match the version of Spring Boot you're using -->
+				<configuration>
+					<!-- Configure to create an executable JAR -->
+					<mainClass>com.codewitharjun.fullstackbackend.FullstackBackendApplication</mainClass>
+				</configuration>
+			</plugin>
+
+			<!-- Maven Compiler Plugin Configuration -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version> <!-- Make sure this is a compatible version -->
+				<configuration>
+					<source>17</source> <!-- Use Java 17 -->
+					<target>17</target> <!-- Ensure compatibility with Java 17 -->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
